@@ -81,7 +81,6 @@ const controlAddRecipe = async function (somedata) {
     addRecipeView.renderMessage();
     bookmarkersView.render(model.state.bookmarks);
 
-    // change ID in url
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
 
     setTimeout(function () {
@@ -92,9 +91,6 @@ const controlAddRecipe = async function (somedata) {
   }
 };
 
-const newFeatures = function () {
-  console.log('welco to application');
-};
 const init = function () {
   recipeView.addHandlerRender(controlRecipe);
   searchView.addHandlerSearch(controlSearchResults);
@@ -102,6 +98,5 @@ const init = function () {
   recipeView.addHandlerUpdateServings(controlServings);
   addRecipeView._addHandlerUpload(controlAddRecipe);
   recipeView.addHandleAddBookmark(controlAddBookmark);
-  newFeatures();
 };
 init();
